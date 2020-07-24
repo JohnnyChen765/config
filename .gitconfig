@@ -16,3 +16,5 @@
 	lg2=log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	lg=!"git lg1"
 	addremote=!git remote add origin
+	preclean=!git branch -vv | grep ': gone]' | grep -v "\\*"
+	cleanlocal=!"git branch -vv | grep ': gone]'|  grep -v '\\*' | awk '{ print $1; }' | xargs -r git branch -D"
