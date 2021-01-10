@@ -1,8 +1,13 @@
 [alias]
+	amd=!git add . && git commit --amend
 	b=branch
 	cm=commit -m
 	co=checkout
 	cob=checkout -b
+	cp=cherry-pick
+	ck=cherry-pick --skip
+	cc=cherry-pick --continue
+	ca=cherry-pick --abort
 	pr=pull --rebase
 	prom=pull --rebase origin master
 	pf=push -f
@@ -16,5 +21,6 @@
 	lg2=log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	lg=!"git lg1"
 	addremote=!git remote add origin
-	preclean=!git branch -vv | grep ': gone]' | grep -v "\\*"
+	red=reset .
+	preclean=!git fetch -p && git branch -vv | grep ': gone]' | grep -v "\\*"
 	cleanlocal=!"git branch -vv | grep ': gone]'|  grep -v '\\*' | awk '{ print $1; }' | xargs -r git branch -D"
