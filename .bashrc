@@ -1,0 +1,8 @@
+alias space='du -sh * | sort -hr'
+alias disk='df -H'
+alias corbeille='cd ~/.local/share/Trash'
+alias vider='rm -r ./*'
+alias journal='cd /var/log/journal'
+alias here='xdg-open .'
+alias aptcache='du -sh /var/cache/apt/archives'
+alias clean_aptcache='apt-cache clean'
