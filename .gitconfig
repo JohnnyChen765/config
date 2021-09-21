@@ -1,6 +1,7 @@
 [alias]
 	amd=!git add . && git commit --amend
 	b=branch
+	break=!git add -A && git cm "break"
 	cm=commit -m
 	co=checkout
 	cob=checkout -b
